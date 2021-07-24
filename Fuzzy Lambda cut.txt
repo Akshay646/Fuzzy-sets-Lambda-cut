@@ -1,0 +1,64 @@
+//@Author : Akshay Yadav
+
+#include <bits/stdc++.h>
+#define loop(n) for(int i = 1 ; i <=  n ; i++)
+#define loop2(n) for(int j = 1 ; j <= n ; j++)
+typedef float f;
+
+using namespace std;
+
+//Lambda cut for a set
+void lambdaCut(f a[], int n, f lambda){
+    loop(n){
+        if(a[i] >= lambda)
+        printf("%.2f\t",a[i]);
+    }
+}
+
+//Lambda cut for matrix
+void lambdaCutMatrix(){
+    int r, c;
+    cin >> r >> c;
+    f a[r][c], lambda;
+    cin >> lambda;
+    loop(r){
+        loop2(c){
+            cin >> a[i][j];
+        }
+    }
+    
+    loop(r){
+        loop2(c){
+            cin >> a[i][j];
+            if(a[i][j] >= lambda)
+                printf("1 \t");
+            else
+                printf("0 \t");
+        }
+        cout<<"\n";
+    }
+}
+
+signed main()
+{
+    int n;
+    cin >> n;
+    f a[n], lambda;
+    cin >> lambda;
+    loop(n){
+        cin >> a[i];
+    }
+   cout << "Lambda cut for a set A:"<<"\n";
+   lambdaCut(a, n, lambda); 
+   
+   cout <<"\n";
+   cout <<"\n";
+  
+   
+   
+   
+   cout << "Lambda cut for a set A:"<<"\n";
+   lambdaCutMatrix();
+   
+   return 0;
+}
